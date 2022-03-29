@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Home />
+        <Home first-name="Danilo" last-name="H" otro="algo" />
     </div>
 </template>
 

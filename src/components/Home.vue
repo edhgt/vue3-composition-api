@@ -18,16 +18,20 @@ export default {
             type: String
         }
     },
-    setup(props) {
+    setup(props, { expose }) {
+
         const { firstName, lastName } = toRefs(props)
 
         const fullName = computed(() => {
             return `${firstName.value} ${lastName.value}`
         });
 
-        return {
-            fullName
-        }
+        const foo = () => console.log()
+
+        expose({
+            fullName,
+            foo
+        })
     }
 }
 </script>
