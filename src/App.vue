@@ -1,31 +1,15 @@
 <template>
     <div>
-        <UserRepositories user="edhernandez7" />
+        <Home />
     </div>
 </template>
 
 <script>
-import baseMixin from "@/mixins/base";
-import UserRepositories from "./components/UserRepositories.vue";
+import Home from './components/Home.vue'
 
 export default {
     name: "App",
-    mixins: [base],
-    data() {
-        return {
-            text: "Hola Vue"
-        };
-    },
-    beforeCreate() {
-        console.log("beforeCreate", this.$data, this.$el);
-    },
-    created() {
-        console.log("created", this.$data, this.$el);
-    },
-    mounted() {
-        console.log("mounted", this.$data, this.$el);
-    },
-    components: { UserRepositories }
+    components: { Home }
 };
 </script>
 
