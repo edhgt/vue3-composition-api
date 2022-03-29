@@ -1,13 +1,12 @@
 <template>
     <div>
-        {{ text }}
-        <br>
-        {{ algo }}
+        <UserRepositories user="edhernandez7" />
     </div>
 </template>
 
 <script>
 import baseMixin from "@/mixins/base";
+import UserRepositories from "./components/UserRepositories.vue";
 
 export default {
     name: "App",
@@ -18,14 +17,15 @@ export default {
         };
     },
     beforeCreate() {
-        console.log("beforeCreate", this.$data, this.$el)
+        console.log("beforeCreate", this.$data, this.$el);
     },
     created() {
-        console.log("created", this.$data, this.$el)
+        console.log("created", this.$data, this.$el);
     },
     mounted() {
-        console.log("mounted", this.$data, this.$el)
-    }
+        console.log("mounted", this.$data, this.$el);
+    },
+    components: { UserRepositories }
 };
 </script>
 
