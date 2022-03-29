@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue';
+import { ref, reactive, watch } from 'vue';
 
 export default {
     setup() {
@@ -32,6 +32,20 @@ export default {
         obj.counter++
 
         setInterval(() => obj.counter++, 500)
+
+        /*
+        Si queremos escuchar el cambio del objeto entero
+        */
+        watch(obj, (valor, anterior) => {
+            console.log(valor, anterior)
+        })
+
+        /*
+        Si queremos escuchar el cambio en una propiedad
+        */
+        watch(() => obj.counter, (valor, anterior) => {
+            console.log(valor, anterior)
+        })
 
         return {
             text,
